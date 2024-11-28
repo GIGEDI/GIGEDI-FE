@@ -10,23 +10,17 @@ const SignupPage = () => {
     };
 
     return (
-        <div className="fixed inset-0 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center mt-[220px] w-full min-h-screen overflow-hidden">
             <img 
                 src={shootLogo} 
                 alt="shootLogo" 
                 style={{ width: "315px", height: "66.23px" , top: '300px'}} 
             />
-             <div className='flex flex-col mt-[15.54px] w-[494px]'>
+             <div className='flex flex-col mt-[55.54px]'>
             <div style={typography.title.medium}>Create your account</div>
             <button 
-                className="flex items-center justify-center mt-[12px] gap-[8px] rounded-lg bg-[colors.grayscale[80]] w-full h-[53px] hover:border-[1px] hover:border-[#9CFFBF]"
+                className="flex items-center justify-center mt-[12px] gap-[8px] rounded-lg bg-Grayscale-80 w-[494px] h-[56px] hover:border-[1px] hover:border-[#9CFFBF]"
                 onClick={handleGoogleLogin}
-                style={{ 
-                    width: '100%', 
-                    height: '53px', 
-                    backgroundColor: colors.grayscale[80],
-                    ...typography.title.small
-                }}
             >
                 <img src={googleLogo} alt='googleLogo' style={{ width: '24px', height: '24px' }} />
                 <span style={typography.title.small}>Sign Up With Google</span>

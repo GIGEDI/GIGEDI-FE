@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import googleLogo from '../../assets/logo/googleLogo.png';
 import shootLogo from '../../../public/images/shoot/shootLogo.png';
 import typography from '../../styles/typography';
-import colors from '../../styles/color';
 
 const LoginPage: React.FC = () => {
     const navigate = useNavigate();
@@ -14,36 +13,28 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center">
-            <div className="flex flex-col items-center w-full max-w-[494px] px-4">
-                <img
-                    src={shootLogo}
-                    alt="shootLogo"
-                    className="w-[315px] h-[66.23px] mb-[15.54px]"
-                />
-                <div className="w-full">
-                    <div className="text-xl font-medium font-['Pretendard'] mb-[12px]">
-                        Sign in to your account
-                    </div>
+        <div className="flex flex-col items-center mt-[220px] w-full min-h-screen overflow-hidden">
+            <img
+                src={shootLogo}
+                alt="shootLogo"
+                className="w-[315px] h-[66.23px] mb-[55.54px]"
+            />
+            <div className="flex flex-col">
+                <div style={typography.title.medium}>Sign in to your account</div>
 
-                    <button
-                        onClick={handleGoogleLogin}
-                        className="flex items-center justify-center gap-[8px] rounded-lg w-full h-[53px] hover:border-[1px] hover:border-[#9CFFBF]"
-                        style={{
-                            backgroundColor: colors.grayscale[80],
-                            ...typography.title.small,
-                        }}
-                    >
-                        <img src={googleLogo} className="w-[24px]" />
-                        <span style={typography.title.small}>Continue With Google</span>
+                <button
+                    onClick={handleGoogleLogin}
+                    className="flex items-center justify-center mt-[12px] gap-[8px] rounded-lg bg-Grayscale-80 w-[494px] h-[56px] hover:border-[1px] hover:border-[#9CFFBF]"
+                >
+                    <img src={googleLogo} className="w-[24px]" />
+                    <span style={typography.title.small}>Continue With Google</span>
+                </button>
+
+                <div className="flex flex-row items-center justify-center mt-[16px] text-center">
+                    Don't have an account yet?
+                    <button className="ml-1 underline" onClick={() => navigate('/signup')}>
+                        Sign Up
                     </button>
-
-                    <div className="flex flex-row items-center justify-center mt-[16px]">
-                        Don't have an account yet?
-                        <button className="ml-1 underline" onClick={() => navigate('/signup')}>
-                            Sign Up
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
