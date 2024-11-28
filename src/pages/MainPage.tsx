@@ -25,50 +25,57 @@ const MainPage = () => {
 
 
     return (
-        <div className="relative flex flex-col top-[250px] items-center justify-center w-full">
-            <div className="text-white text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center bg-[#080808]">
-                SHOOT YOUR CREATIVE OUTPUT
-            </div>
+        <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex flex-col items-center justify-center w-full ">
+                <div className="flex flex-col bg-[#080808] w-full">
+                    <div className="text-Grayscale-0 mt-[250px] text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center">
+                        SHOOT YOUR CREATIVE OUTPUT
+                    </div>
 
-            <div className="w-[943px] mt-[46px] text-center text-white text-[19px] font-medium font-['Pretendard'] leading-7 bg-[#080808]">
-                SHOOT integrates all key points,
-                <br /> emphasizing the flexibility, collaboration, and task management with FIGMA,
-                <br /> while maintaining user-friendly flow.
-            </div>
+                    <p className="flex text-center items-center justify-center mt-[46px] text-white text-[19px] font-['Pretendard']">
+                        SHOOT integrates all key points,
+                        <br /> emphasizing the flexibility, collaboration, and task management with FIGMA,
+                        <br /> while maintaining user-friendly flow.
+                    </p>
 
-            <Link to='signin'>
-                <div className="mt-[70px] h-[61px] p-4 rounded-[10px] border border-[#6effd9] flex justify-center items-center gap-2.5 bg-[#080808] cursor-pointer">
-                    <div className="text-[#6effd9] text-[19px] font-medium font-['Pretendard'] leading-7 text-center">
-                        SIGN IN
+                    <div className="mt-[70px] flex justify-center">
+                        <Link to="signin">
+                            <div className="w-[152.72px] h-[61px] p-4 rounded-[10px] border border-primary-30 flex justify-center items-center cursor-pointer">
+                                <span className="text-primary-30 text-[19px] font-medium font-['Pretendard'] leading-7 text-center">
+                                    SIGN IN
+                                </span>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="flex justify-center items-center mt-[62px]">
+                        <img className="w-[1293px] h-[697px]" src={shootMain} alt="SHOOT 메인 로고" />
                     </div>
                 </div>
-            </Link>
-            
-            <img className="mt-[62px] bg-[#080808] w-[1293px] h-[697px]" src={shootMain} alt="Main illustration for the Shoot project" />
-
+            </div>
+           
             {/** 구역 1 */}
             <div>
-                <div className="mt-[156px] mb-[91.64px] text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px]">
+                <div className="mt-[156px] text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase ">
                     Manage your frame and comment efficiently
                 </div>
 
                 {/** 구역1 Row 정렬 */}
-                <div className="flex flex-row mt-[204px] relative">
+                <div className="flex flex-row mt-[198px]">
                     {/** 구역 1 Row Col 1 */}
                     <div className="flex flex-col">
-                        <div className="mt-[359px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="mt-[155px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Capture key moments
                             <br/>of your design
                             <br/>and create your block
                         </div>
 
-                        <div className="mt-[336px]">
+                        <div className="mt-[336px] p-0.5 rounded-[22px] bg-custom-gradient">
                             <Lottie animationData={shoot1st} loop={true}/>
                         </div>
                     </div>
                     
                     {/** 구분선 - 스크롤 시 높이 변경 */}
-                    <div className="mt-[448px] ml-[69px] mr-[55px] flex flex-col items-center">
+                    <div className="ml-[69px] mr-[55px] flex flex-col items-center">
                         {/* 상단 점 */}
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full" />
 
@@ -81,7 +88,7 @@ const MainPage = () => {
 
                     {/** 구역 1 Row Col 2 */}
                     <div className="ml-[58px] flex flex-col">
-                        <div className="mt-[365px]">
+                        <div className="p-0.5 rounded-[22px] bg-custom-gradient">
                             <Lottie animationData={shoot2nd} loop={true}/>
                         </div>
 
@@ -101,7 +108,7 @@ const MainPage = () => {
                 </div>
 
                 {/** Row 정렬 */}
-                <div className="flex flex-row mt-[285px] relative">
+                <div className="flex flex-row mt-[285px]">
                     {/** 왼쪽 세로*/}
                     <div className="mt-[258px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                         Stay connected   
@@ -118,7 +125,7 @@ const MainPage = () => {
                     </div>
 
                     {/** 오른쪽 세로 */}
-                    <div className="mt-[93px]">
+                    <div className="mt-[93px] p-0.5 rounded-[22px] bg-custom-gradient">
                         <Lottie animationData={shoot3rd} loop={true}/>
                     </div>
                 </div>
@@ -135,15 +142,17 @@ const MainPage = () => {
                 <div className="flex flex-row mt-[285px] relative">
                     {/** 왼쪽 세로*/}
                     <div className='flex flex-col mt-[189px]'>
-                        <Lottie animationData={shoot4th} loop={true}/>
+                        <div className=' p-0.5 rounded-[22px] bg-custom-gradient'>
+                             <Lottie animationData={shoot4th} loop={true}/>
+                        </div>
                         <div className="mt-[336px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Track your tasks   
                             <br/>efficiently
                             <br/>with 'yet-DOING-done' 
                             <br/>status management
                         </div>
-                        <div className="mt-[276px]">
-                            <img src={shoot6th} className='rounded-3xl'/>
+                        <div className="mt-[276px] p-0.5 rounded-[22px] bg-custom-gradient">
+                            <img src={shoot6th} className='rounded-[22px]'/>
                         </div>
                     </div>
                    
@@ -163,7 +172,7 @@ const MainPage = () => {
                             <br/>into a to-do 
                             <br/>with just one click
                         </div>
-                        <div className="mt-[332px]">
+                        <div className="mt-[332px] p-0.5 rounded-[22px] bg-custom-gradient">
                             <Lottie animationData={shoot5th} loop={true}/>
                         </div>
                         <div className="mt-[335.64px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">

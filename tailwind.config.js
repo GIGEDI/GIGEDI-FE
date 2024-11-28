@@ -10,6 +10,9 @@ export default {
         center: true,
         padding: "20px",
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to bottom, #9CFFBF, #ADD8FF)',
+      },
       colors: {
         primary: {
           0: "#FFFFFF",
@@ -37,7 +40,7 @@ export default {
           70: "#243CAE",
           80: "#162672",
           90: "#0B1339",
-          100: "#020202", // (기존 Grayscale과 유사)
+          100: "#020202",
         },
         Grayscale: {
           0: "#FFFFFF",
