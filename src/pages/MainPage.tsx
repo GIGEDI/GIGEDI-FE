@@ -26,25 +26,25 @@ const MainPage = () => {
 
     return (
         <div className="relative flex flex-col top-[250px] items-center justify-center w-full">
-            <div className="text-white text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center">
+            <div className="text-white text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center bg-[#080808]">
                 SHOOT YOUR CREATIVE OUTPUT
             </div>
 
-            <div className="w-[943px] mt-[46px] text-center text-white text-[19px] font-medium font-['Pretendard'] leading-7">
+            <div className="w-[943px] mt-[46px] text-center text-white text-[19px] font-medium font-['Pretendard'] leading-7 bg-[#080808]">
                 SHOOT integrates all key points,
                 <br /> emphasizing the flexibility, collaboration, and task management with FIGMA,
                 <br /> while maintaining user-friendly flow.
             </div>
 
             <Link to='signin'>
-                <div className="mt-[70px] h-[61px] p-4 rounded-[10px] border border-[#6effd9] flex justify-center items-center gap-2.5 cursor-pointer">
+                <div className="mt-[70px] h-[61px] p-4 rounded-[10px] border border-[#6effd9] flex justify-center items-center gap-2.5 bg-[#080808] cursor-pointer">
                     <div className="text-[#6effd9] text-[19px] font-medium font-['Pretendard'] leading-7 text-center">
                         SIGN IN
                     </div>
                 </div>
             </Link>
             
-            <img className="mt-[62px] w-[1293px] h-[697px]" src={shootMain} alt="Main illustration for the Shoot project" />
+            <img className="mt-[62px] bg-[#080808] w-[1293px] h-[697px]" src={shootMain} alt="Main illustration for the Shoot project" />
 
             {/** 구역 1 */}
             <div>

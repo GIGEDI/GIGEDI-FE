@@ -58,7 +58,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="fixed top-0 z-50 flex items-center justify-between w-full h-20 bg-black border-b border-white user-dropdown-container">
+    <div className="fixed top-0 z-50 flex items-center justify-between w-full h-20 border-b border-white bg-Grayscale-100 user-dropdown-container">
       <Link to="/">
         <div className="flex items-center ml-[320px]">
           <img
