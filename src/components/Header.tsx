@@ -127,7 +127,7 @@ const Header: React.FC = () => {
         )}
 
 
-        <button className="px-10 py-2.5 bg-[#20f5bd] rounded-md flex items-center justify-center">
+        <button className="px-10 py-2.5 bg-[#21F5BE] w-[199px] h-[46px] rounded-md flex items-center justify-center">
           <a 
             href="https://www.figma.com/team_invite/redeem/nwJRmQTA0WburOPMyBqnbJ" 
             target="_blank" 
