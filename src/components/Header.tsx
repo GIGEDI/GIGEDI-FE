@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { getMemberInfo } from "../api/membersAxios";
 import { useEffect, useState } from "react";
 import checkImg from '../assets/check.svg';
+import { logoutApi } from "../api/logoutApi";
 
 interface UserInfo {
   username: string;
@@ -57,6 +58,20 @@ const Header: React.FC = () => {
     }
   };
 
+  const handleDisconnectGoogle = async() => {
+    try {
+      const result = await logoutApi(localStorage.getItem('accessToken') as string);
+      console.log(result);
+      if (result.success) {
+          console.log("로그아웃 성공");
+          setUserInfo(null);
+          window.location.href = "/";   
+           }
+      } catch (error) {
+      console.error("로그아웃 실패:", error);
+  }   
+  };
+
   return (
     <div className="fixed top-0 z-50 flex items-center justify-between w-full h-20 border-b border-[#525658] bg-Grayscale-100 user-dropdown-container">
       <Link to="/">
@@ -104,16 +119,14 @@ const Header: React.FC = () => {
               </div>
               <div className="fixed z-50 flex items-center justify-between w-full bg-transparent border-b border-Grayscale-70"/>
               <div className="px-5 py-2.5 cursor-pointer hover:rounded-lg group">
-                <Link to="/logout">
-                  <div className="flex items-center gap-2">
+                  <button className="flex items-center gap-2" onClick={handleDisconnectGoogle}>
                     <img
                       src={checkImg}
                       alt="Check Icon"
                       className="w-4 h-4 opacity-0 group-hover:opacity-100"
                     />
                     <span>Log out</span>
-                  </div>
-                </Link>
+                  </button>
               </div>
             </div>
           )}
