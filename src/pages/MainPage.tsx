@@ -40,7 +40,7 @@ const MainPage = () => {
 
                     <div className="mt-[70px] flex justify-center">
                         <Link to="signin">
-                            <div className="w-[152.72px] h-[61px] p-4 rounded-[10px] border border-primary-30 flex justify-center items-center cursor-pointer">
+                            <div className="w-[152.72px] h-[61px] p-5 rounded-[10px] border border-primary-30 flex justify-center items-center cursor-pointer">
                                 <span className="text-primary-30 text-[19px] font-medium font-['Pretendard'] leading-7 text-center">
                                     SIGN IN
                                 </span>

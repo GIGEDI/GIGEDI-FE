@@ -10,4 +10,4 @@ const routes = {
     user: "/user",
 }
   
-  export default routes;
+export default routes;
