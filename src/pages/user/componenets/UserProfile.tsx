@@ -4,6 +4,7 @@ import add from '../../../assets/add.svg';
 import deleteIcon from '../../../assets/delete.svg';
 import PopUp from './PopUp';
 import { figmaCheckApi } from '../../../api/figmaCheckApi';
+import { figmaDisconnectApi } from '../../../api/figmaDeleteApi';
 
 interface FigmaInfo {
    figmaId: string;
@@ -41,7 +42,7 @@ const UserProfile: React.FC = () => {
     }, []);
 
     const handleAddInput = () => {
-        const figmaURL=import.meta.env.VITE_FIGMA_URL;
+        const figmaURL = import.meta.env.VITE_FIGMA_URL;
         window.location.href = figmaURL;
         setInputs([...inputs, ""]);
     };
@@ -51,11 +52,32 @@ const UserProfile: React.FC = () => {
     };
 
     const handleDeleteClick = () => setShowPopup(true);
-    const handleDisconnect = () => {
+
+    const handleDisconnect = async () => {
         setShowPopup(false);
-        // 추가적으로 계정 연결 해제를 처리하는 로직을 여기에 추가
-        console.log("Figma account disconnected");
+        const deleteFigmaAccountInfo = async () => {
+            const token = localStorage.getItem("accessToken");
+            if (!token) {
+                console.log("Not found Figma account information");
+                setLoading(false);
+                return;
+            }
+
+            try {
+                const data = await figmaDisconnectApi(token);
+                console.log("Figma account disconnected:", data);
+                setFigmaInfo(null);
+                setInputs([]);
+            } catch (err) {
+                console.error("Error disconnecting Figma account:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        await deleteFigmaAccountInfo();
     };
+
     const handleClosePopup = () => setShowPopup(false);
 
     return (
@@ -78,7 +100,6 @@ const UserProfile: React.FC = () => {
                         </div>
     
                         {figmaInfo ? (
-                            // FigmaInfo가 있을 때 렌더링
                             <>
                                 <p className="mt-5 text-[17px] font-normal font-['Pretendard'] leading-relaxed text-Grayscale-60">
                                     {figmaInfo.email}
