@@ -8,6 +8,7 @@ import shoot4th from '../../public/images/shoot/shootFORTH.json';
 import shoot5th from '../../public/images/shoot/shootFIFTH.json';
 import shoot6th from '../../public/images/shoot/shootSIXTHgif.gif';
 import Lottie from 'lottie-react';
+import ScrollToTop from '../components/ScrollToTop';
 
 const MainPage = () => {
     const [lineHeight, setLineHeight] = useState(0);
@@ -52,7 +53,6 @@ const MainPage = () => {
                     </div>
                 </div>
             </div>
-           
             {/** 구역 1 */}
             <div className='flex flex-col items-center justify-center'>
                 <div className="mt-[156px] text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase ">
@@ -189,7 +189,9 @@ const MainPage = () => {
                 <div className=" text-white text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center">
                     SHOOT YOUR CREATIVE OUTPUT
                 </div>
-                <div className='mt-[74px] justify-center items-center gap-2.5 flex'>
+                <ScrollToTop className='ml-auto mt-[9px]'/>
+
+                <div className='mt-[17px] justify-center items-center gap-2.5 flex'>
                     <Link to='signin'>
                         <button className=" h-[61px] p-4 rounded-[10px] border border-[#6effd9] ">
                             <span className="w-[120.72px] text-center text-[#6effd9] text-[19px] font-medium font-['Pretendard'] leading-7">
@@ -199,7 +201,7 @@ const MainPage = () => {
                     </Link>
                 </div>
             </div>
-            
+
         </div>
     );
 };
