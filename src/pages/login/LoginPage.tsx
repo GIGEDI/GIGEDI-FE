@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center mt-[220px] w-full min-h-screen overflow-hidden">
+        <div className="fixed inset-0 flex flex-col items-center mt-[250px] overflow-hidden">
             <img
                 src={shootLogo}
                 alt="shootLogo"
