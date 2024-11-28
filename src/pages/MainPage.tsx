@@ -54,22 +54,22 @@ const MainPage = () => {
             </div>
            
             {/** 구역 1 */}
-            <div>
+            <div className='flex flex-col items-center justify-center'>
                 <div className="mt-[156px] text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase ">
                     Manage your frame and comment efficiently
                 </div>
 
                 {/** 구역1 Row 정렬 */}
-                <div className="flex flex-row mt-[198px]">
+                <div className="flex flex-row mt-[198px] mx-[320px]">
                     {/** 구역 1 Row Col 1 */}
                     <div className="flex flex-col">
-                        <div className="mt-[155px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="mt-[155px] w-[559px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Capture key moments
                             <br/>of your design
                             <br/>and create your block
                         </div>
 
-                        <div className="mt-[336px] p-0.5 rounded-[22px] bg-custom-gradient">
+                        <div className="mt-[336px] p-0.5 rounded-[22px] w-[580px] bg-custom-gradient">
                             <Lottie animationData={shoot1st} loop={true}/>
                         </div>
                     </div>
@@ -101,31 +101,31 @@ const MainPage = () => {
             </div>    
 
             {/** 구역 2 */}
-            <div className='mt-[156px] mb-[192px]'>
+            <div className='mt-[156px] mb-[192px] mx-[320px]'>
                 <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Sync with your team, 
                     <br/>stay updated on every comment
                 </div>
 
                 {/** Row 정렬 */}
-                <div className="flex flex-row mt-[285px]">
+                <div className="flex flex-row mt-[285px] w-full justify-content: space-between">
                     {/** 왼쪽 세로*/}
-                    <div className="mt-[258px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                    <div className="mt-[258px] w-[559px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                         Stay connected   
                         <br/>with team messenger
-                        <br/>Integrations and 
-                        <br/>receive real-time 
-                        <br/>notifications
+                        <br/>Integrations and receive
+                        <br/>real-time notifications
                     </div>
                     
-                    {/** 구분선 - 스크롤 시 높이 변경 */}
-                    <div className="mt-[414px] ml-[70px] mr-[58px] flex flex-col items-center">
-                        {/* 상단 점 */}
-                        <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full" />
+                    {/** 가운데 구분선 */}
+                    <div className="flex flex-col items-center justify-between mx-[20px]">
+                        <div style={{ height: '640px' }} className="w-0.5 bg-[#1D1E1F]" />
+
+                        <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full mtranslate-y-1/2" />
                     </div>
 
                     {/** 오른쪽 세로 */}
-                    <div className="mt-[93px] p-0.5 rounded-[22px] bg-custom-gradient">
+                    <div className="mt-[93px] right-0 p-0.5 rounded-[18px] bg-custom-gradient">
                         <Lottie animationData={shoot3rd} loop={true}/>
                     </div>
                 </div>

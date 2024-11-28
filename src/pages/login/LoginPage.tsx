@@ -14,30 +14,32 @@ const LoginPage: React.FC = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-screen">
-            <img
-                src={shootLogo}
-                alt="shootLogo"
-                className="w-[315px] h-[66.23px]"
-            />
-            <div className="flex flex-col mt-[15.54px] w-[494px]">
-                <div className="text-xl font-medium">Sign in to your account</div>
+        <div className="fixed inset-0 flex items-center justify-center">
+            <div className="flex flex-col items-center w-full max-w-[494px] px-4">
+                <img
+                    src={shootLogo}
+                    alt="shootLogo"
+                    className="w-[315px] h-[66.23px] mb-[15.54px]"
+                />
+                <div className="w-full">
+                    <div className="text-xl font-medium font-['Pretendard'] mb-[12px]">
+                        Sign in to your account
+                    </div>
 
-                <button
-                    onClick={handleGoogleLogin}
-                    className="flex items-center justify-center mt-[12px] gap-[8px] rounded-lg bg-[colors.grayscale[80]] w-full h-[53px] hover:border-[1px] hover:border-[#9CFFBF]"
-                    style={{
-                        backgroundColor: colors.grayscale[80],
-                        ...typography.title.small,
-                    }}
-                >
-                    <img src={googleLogo} className="w-[24px]" />
-                    <span style={typography.title.small}>Continue With Google</span>
-                </button>
+                    <button
+                        onClick={handleGoogleLogin}
+                        className="flex items-center justify-center gap-[8px] rounded-lg w-full h-[53px] hover:border-[1px] hover:border-[#9CFFBF]"
+                        style={{
+                            backgroundColor: colors.grayscale[80],
+                            ...typography.title.small,
+                        }}
+                    >
+                        <img src={googleLogo} className="w-[24px]" />
+                        <span style={typography.title.small}>Continue With Google</span>
+                    </button>
 
-                <div className="flex flex-col items-center justify-center">
-                    <div className="mt-[16px]">
-                        Don’t have an account yet?
+                    <div className="flex flex-row items-center justify-center mt-[16px]">
+                        Don't have an account yet?
                         <button className="ml-1 underline" onClick={() => navigate('/signup')}>
                             Sign Up
                         </button>
