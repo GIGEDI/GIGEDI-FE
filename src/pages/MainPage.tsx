@@ -102,7 +102,7 @@ const MainPage = () => {
 
             {/** 구역 2 */}
             <div className='mt-[156px] mb-[192px]'>
-                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px]">
+                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Sync with your team, 
                     <br/>stay updated on every comment
                 </div>
@@ -133,7 +133,7 @@ const MainPage = () => {
 
             {/** 구역 3 */}
             <div className='mt-[100px] mb-[101px]'>
-                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px]">
+                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Manage any requests directly 
                     <br/>through your own TODO List
                 </div>
