@@ -23,7 +23,7 @@ const MainPage = () => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center w-full">
+        <div className="flex flex-col items-center justify-center w-full ">
             <div className="flex flex-col items-center justify-center w-full ">
                 <div className="flex flex-col bg-[#080808] w-full">
                     <div className="text-Grayscale-0 mt-[250px] text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center">
@@ -51,8 +51,8 @@ const MainPage = () => {
                 </div>
             </div>
             {/** 구역 1 */}
-            <div className='flex flex-col items-center justify-center'>
-                <div className="mt-[156px] text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase ">
+            <div className='flex flex-col items-center justify-center px-[320px]'>
+                <div className="mt-[156px] text-center text-white text-[36px] font-bold font-['Pretendard'] leading-[60px] uppercase ">
                     Manage your frame and comment efficiently
                 </div>
 
@@ -60,49 +60,50 @@ const MainPage = () => {
                 <div className="flex flex-row mt-[198px]">
                     {/** 구역 1 Row Left */}
                     <div className="flex flex-col">
-                        <div className="mt-[155px] w-[559px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="mt-[155px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Capture key moments
                             <br/>of your design
                             <br/>and create your block
                         </div>
 
-                        <div className="mt-[336px] p-0.5 rounded-[22px] w-[580px] bg-custom-gradient">
+                        <div className="mt-[336px] p-0.5 rounded-[18px] bg-custom-gradient">
                             <Lottie animationData={shoot1st} loop={true}/>
                         </div>
                     </div>
                     
                    {/** 가운데 구분선 */}
                    <div className="flex flex-col items-center justify-between mx-[20px] ml-[58px] mr-[55px] relative">
-                        <div className="w-0.5 bg-[#1D1E1F] h-[1190px]" />
+                   <div className="w-0.5 bg-[#1D1E1F] h-[1190px]" />
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute top-[224px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />    
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute bottom-[316px] left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20" />
                     </div>
                     
+                    
                     {/** 구역 1 Row Col 2 */}
-                    <div className="ml-[58px] flex flex-col">
-                        <div className="p-0.5 rounded-[22px] bg-custom-gradient">
+                    <div className="ml-[58px] flex flex-col items-end">
+                        <div className="p-0.5 rounded-[18px] bg-custom-gradient">
                             <Lottie animationData={shoot2nd} loop={true}/>
                         </div>
 
-                        <div className="mt-[336px] w-[559px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="ml-auto mt-[336px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Leave comments, 
-                            <br/>spark collaboration
+                            <br />spark collaboration
                         </div>
                     </div>
                 </div>
             </div>    
 
             {/** 구역 2 */}
-            <div className='mt-[156px] mb-[192px] '>
-                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase">
+            <div className='mt-[156px] mb-[192px] px-[320px]'>
+                <div className="text-center text-white text-[36px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Sync with your team, 
                     <br/>stay updated on every comment
                 </div>
 
                 {/** Row 정렬 */}
-                <div className="flex flex-row mt-[181px] w-full">
+                <div className="flex flex-row mt-[91px] w-full">
                     {/** 왼쪽 세로*/}
-                    <div className="mt-[258px] w-[559px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                    <div className="mt-[210px] w-[559px] text-Grayscale_0 text-[35.1px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                         Stay connected   
                         <br/>with team messenger
                         <br/>Integrations and receive
@@ -116,15 +117,15 @@ const MainPage = () => {
                     </div>
 
                     {/** 오른쪽 세로 */}
-                    <div className="p-0.5 rounded-[22px] mt-[89px] h-[464px] bg-custom-gradient">
-                    <Lottie animationData={shoot3rd} loop={true}/>
+                    <div className="p-0.5 rounded-[18px] mt-[89px] h-[388px] bg-custom-gradient">
+                        <Lottie animationData={shoot3rd} loop={true}/>
                     </div>
                 </div>
             </div>    
 
             {/** 구역 3 */}
-            <div className='mt-[100px] mb-[101px]'>
-                <div className="text-center text-white text-[40px] font-bold font-['Pretendard'] leading-[60px] uppercase">
+            <div className='mt-[91px] mb-[101px] px-[320px]'>
+                <div className="text-center text-white text-[36px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Manage any requests directly 
                     <br/>through your own TODO List
                 </div>
@@ -132,11 +133,11 @@ const MainPage = () => {
                 {/** Row 정렬 */}
                 <div className="flex flex-row mt-[285px] relative">
                     {/** 왼쪽 세로*/}
-                    <div className='flex flex-col mt-[89px]'>
-                        <div className=' p-0.5 rounded-[22px] bg-custom-gradient'>
+                    <div className='flex flex-col mt-[89px] items-start'>
+                        <div className=' p-0.5 rounded-[18px] bg-custom-gradient'>
                              <Lottie animationData={shoot4th} loop={true}/>
                         </div>
-                        <div className="mt-[336px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="mt-[336px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Track your tasks   
                             <br/>efficiently
                             <br/>with 'yet-DOING-done' 
@@ -157,16 +158,16 @@ const MainPage = () => {
                     </div>
 
                     {/** 오른쪽 세로 */}
-                    <div className='flex flex-col mt-[250px]'>
-                        <div className="text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                    <div className='flex flex-col mt-[230px] items-end'>
+                        <div className="text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Turn any request 
                             <br/>into a to-do 
                             <br/>with just one click
                         </div>
-                        <div className="mt-[332px] p-0.5 rounded-[22px] bg-custom-gradient">
+                        <div className="mt-[332px] p-0.5 rounded-[18px] bg-custom-gradient">
                             <Lottie animationData={shoot5th} loop={true}/>
                         </div>
-                        <div className="mt-[335.64px] text-Grayscale_0 text-[40px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
+                        <div className="mt-[335.64px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             View mentioned 
                             <br/>comments in one place
                             <br/>for quick access
