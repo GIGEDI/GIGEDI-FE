@@ -4,7 +4,7 @@ import add from '../../../assets/add.svg';
 import deleteIcon from '../../../assets/delete.svg';
 import PopUp from './PopUp';
 import { figmaCheckApi } from '../../../api/figmaCheckApi';
-import { figmaDisconnectApi } from '../../../api/figmaDeleteApi';
+import { figmaDisconnectApi } from '../../../api/figmaDisconnectApi';
 
 interface FigmaInfo {
    figmaId: string;
@@ -62,9 +62,9 @@ const UserProfile: React.FC = () => {
                 setLoading(false);
                 return;
             }
-
+            
             try {
-                const data = await figmaDisconnectApi(token);
+                const data = await figmaDisconnectApi(token, figmaInfo!.email);
                 console.log("Figma account disconnected:", data);
                 setFigmaInfo(null);
                 setInputs([]);

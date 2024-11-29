@@ -7,13 +7,16 @@ const instance = axios.create({
     },
 });
 
-export const figmaDisconnectApi = async (accessToken: string) => {
+export const figmaDisconnectApi = async (accessToken: string, figmaId: string) => {
     try {
-        // Change from GET to DELETE and update the endpoint to `/api/v1/auth/figma/disconnect`
+        console.log("start disconnecting");
         const response = await instance.delete("/api/v1/auth/figma/disconnect", {
             headers: {
                 "Authorization": `Bearer ${accessToken}`,
             },
+            params: {
+                "figmaId": {figmaId},
+            }
         });
 
         if (response.data.success) {
