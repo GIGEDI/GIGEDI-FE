@@ -56,6 +56,7 @@ const UserProfile: React.FC = () => {
     const handleDisconnect = async () => {
         setShowPopup(false);
         const deleteFigmaAccountInfo = async () => {
+            console.log("deleteFigmaAccountInfo");
             const token = localStorage.getItem("accessToken");
             if (!token) {
                 console.log("Not found Figma account information");
@@ -99,7 +100,7 @@ const UserProfile: React.FC = () => {
                             </span>
                         </div>
     
-                        {figmaInfo ? (
+                        {figmaInfo?.email ? (
                             <>
                                 <p className="mt-5 text-[17px] font-normal font-['Pretendard'] leading-relaxed text-Grayscale-60">
                                     {figmaInfo.email}
