@@ -12,7 +12,8 @@ export default {
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(to bottom, #9CFFBF, #ADD8FF)',
-      },
+        'custom-linear-gradient': 
+          'linear-gradient(180deg, rgba(110, 255, 217, 0.00) 0%, #6EFFD9 100%)',      },
       colors: {
         primary: {
           0: "#FFFFFF",

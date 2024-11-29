@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import shootMain from '../../public/images/shoot/shootmain.gif';
 import shoot1st from '../../public/images/shoot/shootFIRST.json';
@@ -11,15 +11,51 @@ import Lottie from 'lottie-react';
 import ScrollToTop from '../components/ScrollToTop';
 
 const MainPage = () => {
-    useEffect(() => {
+    const [scrollPosition, setScrollPosition] = useState({
+        timeline1: 0,
+        timeline2: 0,
+        timeline3: 0,
+      });
+      
+      const timelineRef1 = useRef<HTMLDivElement>(null);
+      const timelineRef2 = useRef<HTMLDivElement>(null);
+      const timelineRef3 = useRef<HTMLDivElement>(null);
+    
+      useEffect(() => {
         const handleScroll = () => {
-            const scrollY = window.scrollY;
-            console.log(scrollY);
+          const timeline1 = timelineRef1.current;
+          const timeline2 = timelineRef2.current;
+          const timeline3 = timelineRef3.current;
+    
+          if (timeline1 && timeline2 && timeline3) {
+            const calculateScrollPosition = (timeline: HTMLDivElement) => {
+              const timelineTop = timeline.getBoundingClientRect().top + window.scrollY;
+              const timelineHeight = timeline.offsetHeight;
+              const scrollY = window.scrollY + window.innerHeight / 2;
+    
+              if (scrollY > timelineTop && scrollY < timelineTop + timelineHeight) {
+                return Math.min(100, ((scrollY - timelineTop) / timelineHeight) * 100);
+              } else if (scrollY <= timelineTop) {
+                return 10;
+              } else {
+                return 100;
+              }
+            };
+    
+            setScrollPosition({
+              timeline1: calculateScrollPosition(timeline1),
+              timeline2: calculateScrollPosition(timeline2),
+              timeline3: calculateScrollPosition(timeline3)
+            });
+          }
         };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+    
 
 
     return (
@@ -57,9 +93,9 @@ const MainPage = () => {
                 </div>
 
                 {/** 구역1 Row 정렬 */}
-                <div className="flex flex-row mt-[198px]">
+                <div className="flex flex-row mt-[181px]">
                     {/** 구역 1 Row Left */}
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" >
                         <div className="mt-[155px] text-Grayscale_0 text-[36px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                             Capture key moments
                             <br/>of your design
@@ -72,15 +108,18 @@ const MainPage = () => {
                     </div>
                     
                    {/** 가운데 구분선 */}
-                   <div className="flex flex-col items-center justify-between mx-[20px] ml-[58px] mr-[55px] relative">
-                   <div className="w-0.5 bg-[#1D1E1F] h-[1190px]" />
+                   <div className="flex flex-col items-center justify-between ml-[58px] mr-[58px] relative" >
+                        <div className="w-1 bg-[#1D1E1F] h-[1190px]" ref={timelineRef1}/>
+                        <div className="absolute w-1 rounded bg-custom-linear-gradient"
+                            style={{height: "222px", top: `${scrollPosition.timeline1}%`,transform: "translateY(-50%)",}}
+                        />
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute top-[224px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />    
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute bottom-[316px] left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20" />
                     </div>
                     
                     
                     {/** 구역 1 Row Col 2 */}
-                    <div className="ml-[58px] flex flex-col items-end">
+                    <div className="flex flex-col items-end">
                         <div className="p-0.5 rounded-[18px] bg-custom-gradient">
                             <Lottie animationData={shoot2nd} loop={true}/>
                         </div>
@@ -101,7 +140,7 @@ const MainPage = () => {
                 </div>
 
                 {/** Row 정렬 */}
-                <div className="flex flex-row mt-[91px] w-full">
+                <div className="flex flex-row mt-[100px] w-full">
                     {/** 왼쪽 세로*/}
                     <div className="mt-[210px] w-[559px] text-Grayscale_0 text-[35.1px] font-bold font-['Pretendard'] uppercase leading-[60px] tracking-tight">
                         Stay connected   
@@ -111,8 +150,11 @@ const MainPage = () => {
                     </div>
                     
                     {/** 가운데 구분선 */}
-                    <div className="flex flex-col items-center justify-between mx-[20px] ml-[58px] mr-[55px] relative">
-                        <div className="w-0.5 bg-[#1D1E1F] h-[640px]" />
+                    <div className="flex flex-col items-center justify-between mx-[20px] ml-[79px] mr-[55px] relative">
+                        <div className="w-1 bg-[#1D1E1F] h-[640px]" ref={timelineRef2}/>
+                        <div className="absolute w-1 rounded bg-custom-linear-gradient"
+                            style={{height: "222px", top: `${scrollPosition.timeline2}%`,transform: "translateY(-50%)",}}
+                        />
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute bottom-[316px] left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20" />
                     </div>
 
@@ -124,14 +166,14 @@ const MainPage = () => {
             </div>    
 
             {/** 구역 3 */}
-            <div className='mt-[91px] mb-[101px] px-[320px]'>
+            <div className='mt-[100px] px-[320px]'>
                 <div className="text-center text-white text-[36px] font-bold font-['Pretendard'] leading-[60px] uppercase">
                     Manage any requests directly 
                     <br/>through your own TODO List
                 </div>
 
                 {/** Row 정렬 */}
-                <div className="flex flex-row mt-[285px] relative">
+                <div className="flex flex-row mt-[100px] relative">
                     {/** 왼쪽 세로*/}
                     <div className='flex flex-col mt-[89px] items-start'>
                         <div className=' p-0.5 rounded-[18px] bg-custom-gradient'>
@@ -151,7 +193,10 @@ const MainPage = () => {
                     
                     {/** 구분선 - 스크롤 시 높이 변경 */}
                     <div className="flex flex-col items-center justify-between mx-[20px] ml-[58px] mr-[55px] relative">
-                        <div className="w-0.5 bg-[#1D1E1F] h-[1930px]" />
+                        <div className="w-1 bg-[#1D1E1F] h-[1930px]" ref={timelineRef3}/>
+                        <div className="absolute w-1 rounded bg-custom-linear-gradient"
+                            style={{height: "222px", top: `${scrollPosition.timeline3}%`,transform: "translateY(-50%)",}}
+                        />
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute top-[314px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />    
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30" />    
                         <div className="w-2.5 h-2.5 bg-[#6effd9] rounded-full absolute bottom-[326px] left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20" />
