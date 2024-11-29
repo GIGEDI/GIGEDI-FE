@@ -32,12 +32,7 @@ const GoogleOAuthPage = () => {
     } catch (error) {
       const axiosError = error as AxiosError; 
       console.error("로그인 실패:", axiosError);
-      
-      if (axiosError.response?.status === 401) {
-          navigate("/connect-discord");
-      } else {
-          alert("로그인 처리 중 오류가 발생했습니다.");
-      }
+      navigate('/signup');
       }
   };
 
@@ -50,7 +45,7 @@ const GoogleOAuthPage = () => {
 });
 
   return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center w-full h-screen bg-[#080808]">
       <img src={loading} alt="Loading..." />
     </div>
   );

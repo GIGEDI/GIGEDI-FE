@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ShootLogo from '../../../assets/logo/ShootLogo.svg';
 import DiscordLogo from '../../../assets/logo/DiscordLogo.svg';
 import SettingInput from './SettingInput';
+import PopUp from './PopUp';
 
 const UserSetting: React.FC = () => {
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleDeleteClick = () => setShowPopup(true);
+    const handleDisconnect = () => {
+        setShowPopup(false);
+    };
+    const handleClosePopup = () => setShowPopup(false);
 
     return (
         <div className="space-y-8">
@@ -45,12 +53,17 @@ const UserSetting: React.FC = () => {
                             <br/>confirming that all your data have removed from our server. 
                         </p>                        
                         <div className="text-[13px] font-normal font-['Pretendard'] underline leading-tight cursor-pointer focus:outline-none"
-                        onClick={() => { alert('Delete account clicked');}}>
-                        Delete my account
+                                onClick={handleDeleteClick}>
+                                Delete my account
                         </div>
                     </div>
                 </div>
             </div>
+            <PopUp 
+                isOpen={showPopup}
+                onDisconnect={handleDisconnect}
+                onClose={handleClosePopup}
+            />
         </div>
     );
 };

@@ -11,7 +11,7 @@ const ConnectDiscord = () => {
     };
 
     return (
-        <div className='flex flex-col items-center justify-center h-screen w-full mt-[15.54px] '>
+        <div className="fixed inset-0 flex flex-col items-center mt-[250px] overflow-hidden">
             <img src={shootLogo} className='h-[66px] mb-[55px]'/>
 
             <div style={typography.title.medium}> 
