@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const figmaCheckAxios = axios.create({
-    baseURL: 'https://api.shoot-manage.com', 
+    baseURL: 'https://shoot-manage.com', 
     headers: {
         "Content-Type": "application/json",   
     },

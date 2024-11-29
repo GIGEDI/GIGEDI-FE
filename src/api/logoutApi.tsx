@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const figmaCheckAxios = axios.create({
-    baseURL: 'https://api.shoot-manage.com', 
+    baseURL: 'https://shoot-manage.com', 
     headers: {
         "Content-Type": "application/json",   
     },
@@ -16,7 +16,7 @@ export const logoutApi = async (accessToken: string) => {
         });
 
         if (response.data.success) {
-            console.log("Logout success", response.data);
+            console.log("Logout success :", response.data.status);
             return { success: true };
         } else {
             throw new Error(`Failed to log out: ${response.data.status}`);
