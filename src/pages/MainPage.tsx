@@ -181,7 +181,7 @@ const MainPage = () => {
                 <div className=" text-white text-[50px] font-bold font-['Pretendard'] leading-[75px] tracking-wide text-center">
                     SHOOT YOUR CREATIVE OUTPUT
                 </div>
-                <ScrollToTop className='ml-auto mt-[9px]'/>
+                <ScrollToTop />
 
                 <div className='mt-[17px] justify-center items-center gap-2.5 flex'>
                     <Link to="signin">
