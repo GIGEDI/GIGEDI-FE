@@ -37,12 +37,12 @@ const ScrollToTop: React.FC<ScrollToTopProps> = ({ className }) => {
             src={up}
             onClick={scrollToTop}
             className={`${className}`} 
-            // style={{
-            //   position: 'fixed',
-            //   right: '320px',
-            //   bottom: '220px',
-            //   zIndex: 50,
-            // }}
+            style={{
+              position: 'fixed',
+              right: '200px',
+              bottom: '220px',
+              zIndex: 50,
+            }}
           />
         </div>
       )}

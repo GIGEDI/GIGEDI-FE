@@ -11,8 +11,7 @@ const ProfilePage: React.FC = () => {
             <img
                 src={logoBack}
                 alt="Profile Logo"
-                className="absolute w-[460px] h-auto rounded-[10px] mx-auto"
-                style={{ top: "50%", transform: "translateY(-50%)" }}
+                className="absolute w-[460px] h-auto mx-auto justify-center"
             />
 
             <div className="relative w-[1064px] h-[722px] bg-[#1d1e1e]/70 rounded-[10px] border border-[#9bffbe] p-12">
