@@ -159,7 +159,7 @@ const MainPage = () => {
                     </div>
 
                     {/** 오른쪽 세로 */}
-                    <div className="p-0.5 rounded-[18px] mt-[89px] h-[388px] bg-custom-gradient">
+                    <div className="p-0.5 rounded-[18px] mt-[89px] h-[378px] bg-custom-gradient">
                         <Lottie animationData={shoot3rd} loop={true}/>
                     </div>
                 </div>
