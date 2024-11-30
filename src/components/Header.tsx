@@ -72,6 +72,18 @@ const Header: React.FC = () => {
   }   
   };
 
+  const openFigmaAppOrWeb = () => {
+    const appLink = "figma://file/cKqKMXAqvnejAE2PB6yaWR";
+    const webLink = "https://www.figma.com/design/cKqKMXAqvnejAE2PB6yaWR/UI-%2F-%EA%B7%B8%EB%9E%98%ED%94%BD%EB%94%94%EC%9E%90%EC%9D%B8?t=aAIAP70EXv2pF6c9-0";
+  
+    try {
+      window.location.href = appLink;
+    } catch {
+      window.open(webLink, "_blank");
+    }
+  };
+  
+
   return (
     <div className="fixed top-0 z-50 flex items-center justify-between w-full h-20 border-b border-[#525658] bg-Grayscale-100 user-dropdown-container">
       <Link to="/">
@@ -140,15 +152,15 @@ const Header: React.FC = () => {
         )}
 
 
-        <button className="px-10 py-2.5 bg-[#21F5BE] w-[199px] h-[46px] rounded-md flex items-center justify-center">
-          <a 
+        <button className="px-10 py-2.5 bg-[#21F5BE] w-[199px] h-[46px] rounded-md flex items-center justify-center" onClick={openFigmaAppOrWeb}>
+          {/* <a 
             href="https://www.figma.com/design/cKqKMXAqvnejAE2PB6yaWR/UI-%2F-%EA%B7%B8%EB%9E%98%ED%94%BD%EB%94%94%EC%9E%90%EC%9D%B8?node-id=848-1512&node-type=canvas&t=P4CANCk9fq7ROV12-0" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-center text-[#1d1e1e] text-base font-bold font-['Pretendard'] leading-relaxed"
-          >
+          > */}
             FIGMA PLUGIN
-          </a>
+          {/* </a> */}
         </button>
 
       </div>
