@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://shoot-manage.com', 
+    baseURL: 'https://api.shoot-manage.com', 
     headers: {
         "Content-Type": "application/json",   
     },

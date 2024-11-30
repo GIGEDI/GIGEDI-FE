@@ -11,7 +11,7 @@ const refreshAccessToken = async (): Promise<{ accessToken: string; refreshToken
 };
 
 const instance = axios.create({
-  baseURL: 'https://shoot-manage.com', 
+  baseURL: 'https://api.shoot-manage.com', 
   headers: { "Content-type": "application/json" }, 
 });
 

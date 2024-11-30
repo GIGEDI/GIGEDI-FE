@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
 const discordInstance = axios.create({
-  baseURL: 'https://shoot-manage.com', 
+  baseURL: 'https://api.shoot-manage.com', 
   headers: {
     "Content-type": "application/json",
     "Authorization": `Bearer ${localStorage.getItem('accessToken')}`,
