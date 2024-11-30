@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import figmaInstance from "../../../api/figmaAxios";
-import loading from '../../../assets/loading.gif';
 import { AxiosError } from "axios";
 
 const FigmaOAuthPage = () => {
@@ -51,7 +50,6 @@ const FigmaOAuthPage = () => {
 
   return (
     <div className="flex items-center justify-center w-full h-screen bg-[#080808]">
-      <img src={loading} alt="Loading..." />
     </div>
   );
 };
