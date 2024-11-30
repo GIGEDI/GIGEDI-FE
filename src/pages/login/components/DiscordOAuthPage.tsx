@@ -30,9 +30,9 @@ const DiscordOAuthPage = () => {
         console.error("로그인 실패:", axiosError);
         
         if (axiosError.response?.status === 401) {
-            navigate("/connect-discord");
+            navigate("/");
         } else {
-            alert("로그인 처리 중 오류가 발생했습니다.");
+          navigate("/");
         }
         }
     };
